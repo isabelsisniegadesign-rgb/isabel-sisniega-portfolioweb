@@ -76,7 +76,7 @@ export function SiteHeader() {
       <div
         id="menu-movil"
         className={cn(
-          'fixed inset-x-0 bottom-0 top-18 z-40 bg-background transition-opacity duration-300 lg:hidden',
+          'absolute inset-x-0 top-full z-[60] h-[calc(100dvh-4.5rem)] overflow-y-auto bg-white text-foreground shadow-lg transition-opacity duration-300 lg:hidden',
           open ? 'opacity-100' : 'pointer-events-none invisible opacity-0',
         )}
       >

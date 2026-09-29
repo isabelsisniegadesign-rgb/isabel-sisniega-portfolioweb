@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description: 'Identidad visual, contenido para redes y Motion Graphics para marcas que quieren reconocerse.',
     locale: 'es_ES',
     type: 'website',
-    images: ['/images/brand-board.webp'],
+    images: ['/images/isabel-retrato.webp'],
   },
 }
 

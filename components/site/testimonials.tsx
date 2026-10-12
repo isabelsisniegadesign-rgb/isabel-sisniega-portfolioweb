@@ -26,7 +26,7 @@ export function Testimonials() {
         <iframe
           src="https://widget.senja.io/widget/e09f8b3d-67ce-4458-9b3d-de41446f39e7"
           title="Testimonios"
-          style={{ width: '100%', height: '600px', border: 0 marginTop:'40px'}}
+          style={{ width: '100%', height: '600px', border: 0, marginTop:'40px'}}
         />
 
         <div data-senja-widget className="mt-14 empty:hidden" aria-live="polite" />

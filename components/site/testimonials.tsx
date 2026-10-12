@@ -22,8 +22,13 @@ export function Testimonials() {
         </Reveal>
 
         {/* Pega aquí el widget oficial de Senja cuando tengas el código. */}
-        <script src="https://widget.senja.io/widget/e09f8b3d-67ce-4458-9b3d-de41446f39e7/platform.js" type="text/javascript" async></script>
-<div class="senja-embed" data-id="e09f8b3d-67ce-4458-9b3d-de41446f39e7" data-mode="shadow" data-lazyload="false" style="display: block; width: 100%;"></div>
+        
+        <iframe
+          src="https://widget.senja.io/widget/e09f8b3d-67ce-4458-9b3d-de41446f39e7"
+          title="Testimonios"
+          style={{ width: '100%', height: '600px', border: 0 }}
+        />
+
         <div data-senja-widget className="mt-14 empty:hidden" aria-live="polite" />
       </div>
     </section>

@@ -142,11 +142,11 @@ export const PROJECTS: Project[] = [
     necesidad:
       'Proyecto académico desarrollado en equipo para una marca del sector de las telecomunicaciones. El objetivo era desarrollar una propuesta de identidad visual y trasladarla a diferentes aplicaciones de la marca.',
     proceso:
-      'El proyecto comenzó con una fase de investigación y conceptualización de la propuesta. Mi participación se centró en la investigación, la conceptualización, los bocetos iniciales, el desarrollo de mockups y la creación del patrón gráfico.',
+      'El proyecto comenzó con una fase de investigación y conceptualización de la propuesta. Mi participación se centró en la investigación, los bocetos iniciales, el desarrollo de mockups y la creación del patrón gráfico. Además, me encargué de desarrollar la animación del logotipo en After Effects',
     solucion:
-      'Construcción del logotipo y un patrón derivado del símbolo, con sus proporciones y área de respeto definidas, aplicados a papelería y soportes digitales.',
+      'Desarrollo de un sistema visual coherente a partir del logotipo y un patrón gráfico derivado del símbolo, aplicado a papelería y soportes digitales. La propuesta se completa con una versión animada del logotipo.',
     resultado:
-      'Una propuesta de identidad visual aplicada a diferentes soportes, desarrollada de forma conjunta con el resto del equipo.',
+      'Una identidad visual con recursos gráficos versátiles, capaces de mantener la coherencia de la marca tanto en aplicaciones estáticas como en movimiento.',
     video: {
   src: '/videos/log%20AG%20graficos%20en%20mov_2.mp4',
   poster: '/images/papeleria-aplicaciones.webp',

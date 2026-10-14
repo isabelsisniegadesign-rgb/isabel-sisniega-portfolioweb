@@ -130,7 +130,7 @@ export const PROJECTS: Project[] = [
     year: '2025',
     tagline:
       'Identidad corporativa para una marca de servicios: un sistema sobrio, flexible y fácil de aplicar por el propio cliente.',
-    categories: ['Branding', 'Motion'],
+    categories: ['Branding', 'Motion Graphics'],
     cover: '/images/papeleria-aplicaciones.webp',
     coverAlt: 'Papelería y aplicaciones digitales de la identidad de AGnexo',
     meta: [

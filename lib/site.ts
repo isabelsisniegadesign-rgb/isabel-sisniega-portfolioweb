@@ -147,6 +147,11 @@ export const PROJECTS: Project[] = [
       'Construcción del logotipo y un patrón derivado del símbolo, con sus proporciones y área de respeto definidas, aplicados a papelería y soportes digitales.',
     resultado:
       'Una propuesta de identidad visual aplicada a diferentes soportes, desarrollada de forma conjunta con el resto del equipo.',
+    video: {
+  src: '/videos/log%20AG%20graficos%20en%20mov_2.mp4',
+  poster: '/images/papeleria-aplicaciones.webp',
+  caption: 'Animación del logotipo de AGnexo · Motion Graphics',
+},
     gallery: [
       { src: '/images/papeleria-aplicaciones.webp', alt: 'Papelería y aplicaciones de AGnexo', caption: 'Aplicaciones' },
       { src: '/images/construccion-logotipo.webp', alt: 'Construcción del logotipo de AGnexo', caption: 'Construcción del logotipo y patrón derivado del símbolo.' },

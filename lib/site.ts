@@ -150,7 +150,7 @@ export const PROJECTS: Project[] = [
     video: {
   src: '/videos/log%20AG%20graficos%20en%20mov_2.mp4',
   poster: '/images/papeleria-aplicaciones.webp',
-  caption: 'Animación del logotipo de AGnexo · Motion Graphics',
+  caption: 'Animación del logotipo de AGnexo · Motion Design en Adobe After Effects',
 },
     gallery: [
       { src: '/images/papeleria-aplicaciones.webp', alt: 'Papelería y aplicaciones de AGnexo', caption: 'Aplicaciones' },

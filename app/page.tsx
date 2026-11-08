@@ -1,6 +1,5 @@
 import { SiteHeader } from '@/components/site/site-header'
 import { Hero } from '@/components/site/hero'
-import { Services } from '@/components/site/services'
 import { Portfolio } from '@/components/site/portfolio'
 import { About } from '@/components/site/about'
 import { Testimonials } from '@/components/site/testimonials'
@@ -13,7 +12,6 @@ export default function Page() {
       <SiteHeader />
       <main id="contenido">
         <Hero />
-        <Services />
         <Portfolio />
         <About />
         <Testimonials />
@@ -23,4 +21,3 @@ export default function Page() {
     </>
   )
 }
-

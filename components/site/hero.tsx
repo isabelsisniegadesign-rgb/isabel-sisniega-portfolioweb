@@ -1,74 +1,54 @@
-import { ButtonLink } from './primitives'
-import { MotionVideo } from './motion-video'
+'use client'
 
-const MARQUEE_ITEMS = [
-  { number: '01', label: 'Identidad visual', style: 'area' },
-  { number: '02', label: 'Contenido digital', style: 'area' },
-  { number: '03', label: 'Motion Graphics', style: 'area' },
-  { label: 'Cantabria', style: 'location' },
-  { label: 'Trabajo en remoto', style: 'location' },
-]
+import Image from 'next/image'
+import { CATEGORIES } from '@/lib/site'
+
+const NAME = 'text-[clamp(3rem,14vw,6rem)] font-semibold leading-[0.9] tracking-tight lg:text-[clamp(2.5rem,5.6vw,5.5rem)]'
 
 export function Hero() {
+  const pick = (c: string) => window.dispatchEvent(new CustomEvent('portfolio-filter', { detail: c }))
+
   return (
-    <section id="inicio" aria-labelledby="hero-title" className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 pt-12 md:px-10 md:pt-20 lg:grid-cols-12 lg:gap-10 lg:pb-28">
-        <div className="flex flex-col gap-8 lg:col-span-7">
-          <p className="text-4xl font-semibold tracking-tight text-accent sm:text-5xl md:text-6xl">Isabel Sisniega.</p>
-          <h1 id="hero-title" className="text-balance text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl xl:text-7xl">
-            Diseño con identidad y movimiento.
-          </h1>
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <ButtonLink href="#contacto">Cuéntame tu proyecto</ButtonLink>
-            <ButtonLink href="#portfolio" variant="outline">
-              Ver portfolio
-            </ButtonLink>
-          </div>
+    <section id="inicio" aria-labelledby="hero-title" className="mx-auto max-w-7xl px-5 pb-20 pt-10 md:px-10 md:pt-16">
+      <h1 id="hero-title" className="sr-only">
+        Isabel Sisniega, diseñadora digital
+      </h1>
+      <div className="grid items-center justify-items-center gap-6 lg:grid-cols-[1fr_340px_1fr] lg:gap-4">
+        <p aria-hidden="true" className={`${NAME} lg:justify-self-end`}>
+          Isabel
+        </p>
+        <div className="relative aspect-[4/5] w-full max-w-[340px] bg-card">
+          <Image
+            src="/images/isabel-retrato.webp"
+            alt="Retrato de Isabel Sisniega"
+            fill
+            priority
+            sizes="(min-width: 1024px) 340px, 80vw"
+            className="object-cover"
+          />
         </div>
-
-        <div className="lg:col-span-5">
-          <figure className="relative">
-            <div className="relative overflow-hidden rounded-[2rem] bg-card p-3 shadow-[0_30px_80px_-40px_rgba(27,34,52,0.45)]">
-              <MotionVideo
-                src="/videos/vallisa-isotipo-animado.mp4"
-                poster="/images/poster-isotipo-animado.jpg"
-                label="Animación del isotipo de Vallisa"
-                className="aspect-square w-full rounded-[1.5rem]"
-              />
-            </div>
-            <figcaption className="mt-4 flex items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-              <span>Vallisa · Isotipo animado</span>
-              <span>After Effects</span>
-            </figcaption>
-          </figure>
-        </div>
+        <p aria-hidden="true" className={`${NAME} lg:justify-self-start`}>
+          Sisniega
+        </p>
       </div>
 
-      <div className="overflow-hidden border-y border-border" aria-label="Áreas de trabajo y ubicación">
-        <div className="marquee-track flex min-w-full" role="presentation">
-          {[0, 1].map((copy) => (
-            <ul
-              key={copy}
-              aria-hidden={copy === 1}
-              className="flex shrink-0 items-center gap-24 px-8 py-6 pr-32 md:gap-40 md:px-16 md:pr-56 lg:gap-56 lg:pr-72"
+      <p className="mt-10 text-center text-xl font-medium md:text-2xl">
+        Diseñadora digital <span aria-hidden="true">💜</span>
+      </p>
+
+      <ul className="mt-10 flex flex-wrap justify-center gap-x-10 gap-y-3 border-t border-border pt-8">
+        {CATEGORIES.map((c) => (
+          <li key={c}>
+            <a
+              href="#portfolio"
+              onClick={() => pick(c)}
+              className="text-2xl font-semibold tracking-tight decoration-accent underline-offset-8 transition-colors hover:text-accent hover:underline md:text-4xl"
             >
-              {MARQUEE_ITEMS.map((item) => (
-                <li
-                  key={item.label}
-                  className={
-                    item.style === 'location'
-                      ? 'whitespace-nowrap font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground'
-                      : 'flex items-center gap-3 whitespace-nowrap text-sm font-medium md:text-base'
-                  }
-                >
-                  {item.style === 'area' && <span className="font-mono text-xs text-accent">{item.number}</span>}
-                  {item.label}
-                </li>
-              ))}
-            </ul>
-          ))}
-        </div>
-      </div>
+              {c}
+            </a>
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }

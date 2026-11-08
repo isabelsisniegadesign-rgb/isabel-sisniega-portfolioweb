@@ -8,11 +8,11 @@ const jetbrains = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrai
 
 export const metadata: Metadata = {
   title: {
-    default: 'Isabel Sisniega — Identidad visual, contenido para redes y Motion Graphics',
+    default: 'Isabel Sisniega — Diseñadora digital',
     template: '%s — Isabel Sisniega',
   },
   description:
-    'Diseñadora de Cantabria especializada en identidad visual, manuales de marca, gestión de contenido para redes sociales y Motion Graphics. Cuéntame tu proyecto y agenda una llamada de valoración de 15 minutos.',
+    'Portfolio de Isabel Sisniega, diseñadora digital de Cantabria: branding, motion graphics y diseño editorial.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'Isabel Sisniega — Diseño gráfico, identidad visual y motion',
-    description: 'Identidad visual, contenido para redes y Motion Graphics para marcas que quieren reconocerse.',
+    title: 'Isabel Sisniega — Diseñadora digital',
+    description: 'Branding, motion graphics y diseño editorial.',
     locale: 'es_ES',
     type: 'website',
     images: ['/images/isabel-retrato.webp'],

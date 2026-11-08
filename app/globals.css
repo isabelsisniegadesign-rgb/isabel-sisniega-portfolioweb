@@ -23,7 +23,7 @@
   --border: #d8d6d2;
   --input: #c8c7c7;
   --ring: #9b6cdc;
-  --radius: 0.75rem;
+  --radius: 0rem;
 }
 
 @theme inline {

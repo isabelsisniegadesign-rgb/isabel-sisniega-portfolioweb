@@ -2,105 +2,98 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { CATEGORIES, PROJECTS, type Category } from '@/lib/site'
 import { cn } from '@/lib/utils'
-import { SectionHeading } from './primitives'
-import { Reveal } from './reveal'
+import { MotionVideo } from './motion-video'
 
 type Filter = 'Todos' | Category
 
+const LAYOUT: Record<string, { col: string; ratio: string }> = {
+  vallisa: { col: 'md:col-span-12', ratio: 'aspect-[4/3] md:aspect-[16/9]' },
+  'kanto-tcg': { col: 'md:col-span-7', ratio: 'aspect-[3508/2481]' },
+  agnexo: { col: 'md:col-span-5 md:mt-24', ratio: 'aspect-[4/3]' },
+  'cafe-umo': { col: 'md:col-span-5', ratio: 'aspect-[4/3]' },
+  poemario: { col: 'md:col-span-7 md:mt-24', ratio: 'aspect-[3129/1417]' },
+}
+const FALLBACK = { col: 'md:col-span-6', ratio: 'aspect-[4/3]' }
+
 export function Portfolio() {
   const [filter, setFilter] = useState<Filter>('Todos')
-  const projects = filter === 'Todos' ? PROJECTS : PROJECTS.filter((p) => p.categories.includes(filter))
   const filters: Filter[] = ['Todos', ...CATEGORIES]
 
+  useEffect(() => {
+    const onPick = (e: Event) => {
+      const c = (e as CustomEvent<string>).detail as Category
+      if (CATEGORIES.includes(c)) setFilter(c)
+    }
+    window.addEventListener('portfolio-filter', onPick)
+    return () => window.removeEventListener('portfolio-filter', onPick)
+  }, [])
+
   return (
-    <section id="portfolio" aria-labelledby="portfolio-title" className="bg-[#ebe6dd]/60 py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-5 md:px-10">
-        <Reveal>
-          <div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
-            <SectionHeading
-              number="02"
-              label="Portfolio"
-              title={<span id="portfolio-title">Portfolio</span>}
-              intro="Una selección de proyectos de identidad visual, diseño gráfico y animación."
-            />
-            <div role="group" aria-label="Filtrar proyectos por categoría" className="flex flex-wrap gap-2">
-              {filters.map((f) => (
-                <button
-                  key={f}
-                  type="button"
-                  aria-pressed={filter === f}
-                  onClick={() => setFilter(f)}
-                  className={cn(
-                    'rounded-full border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] transition-colors',
-                    filter === f
-                      ? 'border-foreground bg-foreground text-background'
-                      : 'border-foreground/20 hover:border-foreground',
-                  )}
-                >
-                  {f}
-                </button>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-
-        <p aria-live="polite" className="sr-only">
-          {`${projects.length} proyectos`}
-        </p>
-
-        <ul className="mt-14 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => {
-            const featured = project.slug === 'vallisa' && filter === 'Todos'
-            return (
-              <li key={project.slug} className={cn(featured && 'md:col-span-2 lg:col-span-2 lg:row-span-2')}>
-                <Link href={`/proyectos/${project.slug}`} className="group flex h-full flex-col gap-5">
-                  <div
-                    className={cn(
-                      'relative overflow-hidden rounded-2xl bg-[#e6e2dc]',
-                      featured ? 'aspect-[4/3] lg:aspect-auto lg:flex-1' : 'aspect-square',
-                    )}
-                  >
-                    <Image
-                      src={project.cover || '/placeholder.svg'}
-                      alt={project.coverAlt}
-                      fill
-                      sizes={featured ? '(min-width: 1024px) 60vw, 100vw' : '(min-width: 1024px) 30vw, 90vw'}
-                      className="object-contain p-8 transition-transform duration-700 group-hover:scale-[1.04] md:p-12"
-                    />
-                    {featured && (
-                      <span className="absolute left-5 top-5 rounded-full bg-secondary px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-secondary-foreground">
-                        Proyecto destacado · Branding + Motion
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-baseline justify-between gap-4">
-                      <h3 className={cn('font-semibold tracking-tight', featured ? 'text-3xl' : 'text-xl')}>
-                        {project.name}
-                      </h3>
-                      <span className="font-mono text-sm tracking-[0.2em] text-muted-foreground">{project.year}</span>
-                    </div>
-                    <p className="text-pretty text-sm leading-relaxed text-muted-foreground">{project.tagline}</p>
-                    <ul className="mt-1 flex flex-wrap gap-2" aria-label="Categorías">
-                      {project.categories.map((c) => (
-                        <li
-                          key={c}
-                          className="rounded-full bg-background px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-accent"
-                        >
-                          {c}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
+    <section id="portfolio" aria-labelledby="portfolio-title" className="mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32">
+      <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+        <h2 id="portfolio-title" className="text-5xl font-semibold leading-none tracking-tight md:text-7xl">
+          Portfolio
+        </h2>
+        <div role="group" aria-label="Filtrar proyectos por categoría" className="flex flex-wrap gap-x-7 gap-y-2">
+          {filters.map((f) => (
+            <button
+              key={f}
+              type="button"
+              aria-pressed={filter === f}
+              onClick={() => setFilter(f)}
+              className={cn(
+                'text-base font-medium underline-offset-8 transition-colors',
+                filter === f ? 'text-accent underline' : 'text-muted-foreground hover:text-foreground',
+              )}
+            >
+              {f}
+            </button>
+          ))}
+        </div>
       </div>
+
+      <ul className="mt-14 grid grid-cols-1 items-start gap-x-10 gap-y-14 md:grid-cols-12">
+        {PROJECTS.map((p) => {
+          const l = LAYOUT[p.slug] ?? FALLBACK
+          const dim = filter !== 'Todos' && !p.categories.includes(filter)
+          return (
+            <li key={p.slug} className={cn(l.col, 'transition-opacity duration-500', dim && 'pointer-events-none opacity-15')}>
+              <Link href={`/proyectos/${p.slug}`} className="group block" tabIndex={dim ? -1 : 0}>
+                <div className={cn('relative overflow-hidden bg-card', l.ratio)}>
+                  {p.slug === 'vallisa' && p.video ? (
+                    <MotionVideo
+                      src={p.video.src}
+                      poster={p.video.poster}
+                      label={p.coverAlt}
+                      className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                  ) : (
+                    <Image
+                      src={p.cover || '/placeholder.svg'}
+                      alt={p.coverAlt}
+                      fill
+                      sizes="(min-width: 768px) 60vw, 100vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                  )}
+                </div>
+                <div className="mt-4 flex items-baseline justify-between gap-4">
+                  <h3 className="text-2xl font-semibold tracking-tight group-hover:text-accent">{p.name}</h3>
+                  <p className="text-right text-sm text-muted-foreground">
+                    {p.year} · {p.categories.join(' · ')}
+                  </p>
+                </div>
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
+      <p aria-live="polite" className="sr-only">
+        {filter === 'Todos' ? 'Todos los proyectos' : `Proyectos de ${filter}`}
+      </p>
     </section>
   )
 }

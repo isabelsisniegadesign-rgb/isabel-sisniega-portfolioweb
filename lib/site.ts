@@ -8,16 +8,15 @@ export const SITE = {
 
 export const NAV_LINKS = [
   { href: '/#inicio', label: 'Inicio' },
-  { href: '/#servicios', label: 'Servicios' },
   { href: '/#portfolio', label: 'Portfolio' },
   { href: '/#formacion', label: 'Sobre mí' },
   { href: '/#testimonios', label: 'Testimonios' },
   { href: '/#contacto', label: 'Contacto' },
 ]
 
-export type Category = 'Branding' | 'Redes sociales' | 'Motion Graphics' | 'Diseño editorial'
+export type Category = 'Branding' | 'Motion Graphics' | 'Diseño editorial'
 
-export const CATEGORIES: Category[] = ['Branding', 'Redes sociales', 'Motion Graphics', 'Diseño editorial']
+export const CATEGORIES: Category[] = ['Branding', 'Motion Graphics', 'Diseño editorial']
 
 export type GalleryItem = { src: string; alt: string; caption?: string }
 
@@ -47,7 +46,7 @@ export const PROJECTS: Project[] = [
     year: '2026',
     tagline:
       'Identidad de marca personal con una estética artesanal-digital: el proyecto donde pruebo sin encargo y sin límites.',
-    categories: ['Branding', 'Motion Graphics', 'Redes sociales'],
+    categories: ['Branding', 'Motion Graphics'],
     cover: '/images/brand-board.webp',
     coverAlt: 'Brandboard de Vallisa con logotipo, paleta cromática y aplicaciones',
     meta: [
@@ -163,7 +162,7 @@ export const PROJECTS: Project[] = [
     name: 'Café UMO',
     year: '2025',
     tagline: 'Marca e imagen para una cafetería de especialidad, desde el logotipo hasta el packaging.',
-    categories: ['Branding', 'Redes sociales'],
+    categories: ['Branding'],
     cover: '/images/packaging-aplicaciones.webp',
     coverAlt: 'Packaging y aplicaciones de la marca Café UMO',
     meta: [

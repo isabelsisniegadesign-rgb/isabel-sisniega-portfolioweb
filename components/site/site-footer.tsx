@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 md:flex-row md:items-end md:justify-between md:px-10">
         <div className="flex flex-col gap-3">
           <p className="text-2xl font-semibold tracking-tight">
-            {SITE.name} <span aria-hidden="true">💜</span>
+            {SITE.name}
           </p>
           <a href={`mailto:${SITE.email}`} className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline">
             {SITE.email}

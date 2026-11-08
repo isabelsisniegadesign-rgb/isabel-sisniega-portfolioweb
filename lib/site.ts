@@ -3,6 +3,8 @@ export const SITE = {
   email: 'isabel.sisniega.design@gmail.com',
   instagram: 'https://instagram.com/soyvallisa',
   instagramHandle: '@soyvallisa',
+  linkedin: 'https://www.linkedin.com/in/isabel-sisniega-94b771387',
+  behance: 'https://www.behance.net/isabelsisniega',
   calendlyUrl: 'https://calendly.com/isabel-sisniega-design/30min',
 }
 

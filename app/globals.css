@@ -132,3 +132,22 @@
     transition: none;
   }
 }
+
+@keyframes hero-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes hero-from-left {
+  from { opacity: 0; transform: translateX(-6rem); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hero-from-right {
+  from { opacity: 0; transform: translateX(6rem); }
+  to { opacity: 1; transform: none; }
+}
+.hero-photo { animation: hero-fade 1.4s ease-out both; }
+.hero-name { animation: hero-from-left 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both; }
+.hero-btn { animation: hero-from-right 1s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: var(--d, 0.7s); }
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo, .hero-name, .hero-btn { animation: none; }
+}

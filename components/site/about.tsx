@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import { EDUCATION, TOOLS } from '@/lib/site'
+import { EDUCATION, SITE, TOOLS } from '@/lib/site'
+import { ButtonLink } from './primitives'
 
 export function About() {
   return (
@@ -31,6 +32,14 @@ export function About() {
                 Ahora llevo mis proyectos de lo estático a lo dinámico mediante la edición de vídeo, el Motion Graphics y
                 nuevas formas de comunicar visualmente una idea.
               </p>
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href={SITE.linkedin} external variant="outline">
+                LinkedIn
+              </ButtonLink>
+              <ButtonLink href={SITE.behance} external variant="outline">
+                Behance
+              </ButtonLink>
             </div>
           </div>
 

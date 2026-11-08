@@ -29,7 +29,7 @@ export function SiteHeader() {
       </a>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-5 md:px-10">
         <Link href="/#inicio" className="text-lg font-bold tracking-tight" onClick={() => setOpen(false)}>
-          {SITE.name} <span aria-hidden="true">💜</span>
+          {SITE.name}
         </Link>
 
         <nav aria-label="Principal" className="hidden lg:block">

@@ -29,8 +29,7 @@ export function About() {
                 Grado en Diseño Digital en la UNIR.
               </p>
               <p>
-                Ahora llevo mis proyectos de lo estático a lo dinámico mediante la edición de vídeo, el Motion Graphics y
-                nuevas formas de comunicar visualmente una idea.
+               Todo empezó con la ilustración y con un poemario que escribí y maqueté yo misma. Desde entonces no he parado de aprender, y ahora estoy formándome con especial interés en la identidad visual, el diseño editorial y el motion graphics.
               </p>
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">

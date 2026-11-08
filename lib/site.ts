@@ -329,6 +329,30 @@ export const EDUCATION = [
       'Mi interés por el diseño comenzó a través de la ilustración y de la creación de mi propio poemario, que me impulsó a estudiar Diseño Digital.',
   },
   {
+    period: '2026',
+    status: 'Formación complementaria',
+    title: 'Curso Universitario Avanzado en Adobe Creative',
+    place: 'Universidad Internacional de La Rioja (UNIR)',
+    description:
+      'Especialización en Adobe InDesign, Illustrator y Photoshop.',
+  },
+  {
+    period: '2026',
+    status: 'Formación complementaria',
+    title: 'Certificado en Desarrollo Profesional',
+    place: 'Universidad Internacional de La Rioja (UNIR)',
+    description:
+      'Formación complementaria en desarrollo de competencias profesionales.',
+  },
+  {
+    period: '2026',
+    status: 'Proyecto universitario',
+    title: 'Lab Design Project',
+    place: 'Universidad Internacional de La Rioja (UNIR)',
+    description:
+      'Proyecto práctico de diseño desarrollado en el entorno universitario.',
+  },
+  {
     period: 'En curso',
     status: 'Formación universitaria',
     title: 'Grado en Diseño Digital',

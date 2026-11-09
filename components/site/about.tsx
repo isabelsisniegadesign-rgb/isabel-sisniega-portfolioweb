@@ -57,17 +57,40 @@ export function About() {
             </ol>
           </div>
 
-          <div>
-            <h3 className="text-xl font-semibold tracking-tight">Herramientas</h3>
-            <ul className="mt-6 grid gap-x-10 sm:grid-cols-2">
-              {TOOLS.map((tool) => (
-                <li key={tool.short} className="flex items-baseline justify-between border-b border-border py-3">
-                  <span className="font-semibold">{tool.name}</span>
-                  <span className="text-sm text-muted-foreground">{tool.level}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+         <div>
+  <div className="mb-6">
+    <h3 className="text-xl font-semibold tracking-tight">
+      Herramientas<span className="text-accent">.</span>
+    </h3>
+  </div>
+
+  <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+    {TOOLS.map((tool) => (
+      <li
+        key={tool.short}
+        className="group rounded-xl border border-border p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-md"
+      >
+        <div
+          className="flex h-12 w-12 items-center justify-center rounded-lg text-xl font-bold transition-transform duration-300 group-hover:scale-110"
+          style={{
+            backgroundColor: tool.color + '18',
+            color: tool.color,
+          }}
+        >
+          {tool.short}
+        </div>
+
+        <p className="mt-4 font-semibold text-sm">
+          {tool.name}
+        </p>
+      </li>
+    ))}
+  </ul>
+
+  <p className="mt-4 text-xs tracking-widest text-muted-foreground uppercase">
+    Diseño editorial · Edición · Motion Graphics
+  </p>
+</div>
         </div>
       </div>
     </section>

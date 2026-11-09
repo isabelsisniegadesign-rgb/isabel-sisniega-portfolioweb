@@ -151,3 +151,48 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-photo, .hero-name, .hero-btn { animation: none; }
 }
+/* Ajustes generales para móviles */
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 4rem;
+  }
+
+  body {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: break-word;
+  }
+
+  .marquee-track {
+    animation-duration: 30s;
+  }
+
+  .vallisa-row {
+    animation-duration: 55s;
+  }
+
+  .hero-photo {
+    animation-duration: 1s;
+  }
+
+  .hero-name,
+  .hero-btn {
+    animation-duration: 0.8s;
+  }
+}
+
+/* Evitar desbordamientos en pantallas pequeñas */
+* {
+  min-width: 0;
+}

@@ -378,12 +378,12 @@ export const EDUCATION = [
 ]
 
 export const TOOLS = [
-  { short: 'Ai', name: 'Illustrator', level: 'Avanzado', value: 100 },
-  { short: 'Ps', name: 'Photoshop', level: 'Avanzado', value: 100 },
-  { short: 'Id', name: 'InDesign', level: 'Avanzado', value: 100 },
-  { short: 'Ae', name: 'After Effects', level: 'Intermedio', value: 50 },
-  { short: 'Cc', name: 'CapCut', level: 'Intermedio', value: 50 },
-  { short: 'Pr', name: 'Premiere Pro', level: 'Básico', value: 25 },
+  { short: 'Ai', name: 'Illustrator', color: '#FF9A00' },
+  { short: 'Ps', name: 'Photoshop', color: '#31A8FF' },
+  { short: 'Id', name: 'InDesign', color: '#FF3366' },
+  { short: 'Ae', name: 'After Effects', color: '#9999FF' },
+  { short: 'Pr', name: 'Premiere Pro', color: '#9999FF' },
+  { short: 'Cc', name: 'CapCut', color: '#FFFFFF' },
 ]
 
 export type Testimonial = {

@@ -383,7 +383,7 @@ export const TOOLS = [
   { short: 'Id', name: 'InDesign', color: '#FF3366' },
   { short: 'Ae', name: 'After Effects', color: '#9999FF' },
   { short: 'Pr', name: 'Premiere Pro', color: '#9999FF' },
-  { short: 'Cc', name: 'CapCut', color: '#FFFFFF' },
+  { short: 'Cc', name: 'CapCut', color: '#292929' },
 ]
 
 export type Testimonial = {
